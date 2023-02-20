@@ -17,8 +17,27 @@ const TodoReducers = (state=initialData, action) =>{
                        data:data,
                     }]
                 }
-                default: return state;
-        }
+             
+        
+
+        case "DELTODO":
+
+           const newList =  state.list.filter((elem) => elem.id  != action.id)
+
+            return{
+                ...state,
+               list:newList
+            }
+
+            case "REMTODO": return{
+                ...state,
+                list:[],
+            }
+                   
+                
+
+            default: return state;
+    }
 }
 
 export default TodoReducers;

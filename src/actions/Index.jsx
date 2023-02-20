@@ -8,9 +8,12 @@ export const addTodo = (data) =>{
     }
 }
 
-export const delTodo = () =>{
+export const delTodo = (id) =>{
     return{
-        type : "DELTODO"
+        type : "DELTODO",
+        id,
+        
+
     }
 }
 
