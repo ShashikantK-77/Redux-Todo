@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import {useDispatch} from 'react-redux'
+import style from './Todo.css'
 //import css code
 
 import { addTodo,delTodo,remTodo } from '../actions/Index';
@@ -18,7 +19,7 @@ const Todo = () => {
 
       <div className='addItems'>
         <input type='text' placeholder='Add Items' value={inputData} onChange={(event)=>setinputData(event.target.value)}/>
-        <i className='fa fa-plus add-btn'  ></i>
+        <i className='fa fa-plus add-btn' onClick={()=> dispatch(addTodo(inputData)) }  ></i>
 
         {/* onClick={()=> dispatch(addTodo(inputData)) */}
       </div>
